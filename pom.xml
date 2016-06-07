@@ -57,44 +57,17 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>add-it-resources</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/it-classes</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/it/resources</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.19.1</version>
                 <executions>
                     <execution>
-                        <goals><goal>integration-test
-                        </goal>
+                        <goals>
+                            <goal>integration-test</goal>
                         </goals>
                     </execution>
                 </executions>
-                <!--<configuration>-->
-                    <!--<argLine>${failsafeArgLine}</argLine>-->
-<!--                    <testSourceDirectory>src/it/java</testSourceDirectory>
-                    <testClassesDirectory>${project.build.directory}/it-classes</testClassesDirectory>-->
-                <!--</configuration>-->
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -106,7 +79,7 @@
                     <append>true</append>
                     <excludes>
                         <exclude>**/exclude/*</exclude>
-<!--                        <exclude>**/config/*</exclude>
+                        <!--                        <exclude>**/config/*</exclude>
                         <exclude>**/dialect/*</exclude>-->
                     </excludes>
                 </configuration>        
@@ -120,9 +93,6 @@
                         <configuration>
                             <destFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</destFile>
                             <!--<propertyName>surefireArgLine</propertyName>-->
-<!--                            <includes>
-                                <include>**/ut/*</include>
-                            </includes>-->
                         </configuration>
                     </execution>
                     <execution>
@@ -144,10 +114,6 @@
                         </goals>
                         <configuration>
                             <destFile>${project.build.directory}/coverage-reports/jacoco-it.exec</destFile>
-<!--                            <propertyName>failsafeArgLine</propertyName>
-                            <includes>
-                                <include>**/it/*</include>
-                            </includes>-->
                         </configuration>
                     </execution>
                     <execution>
