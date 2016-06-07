@@ -57,7 +57,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.0.0</version>
@@ -78,16 +78,23 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.19.1</version>
-                <configuration>
+                <executions>
+                    <execution>
+                        <goals><goal>integration-test
+                        </goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!--<configuration>-->
                     <!--<argLine>${failsafeArgLine}</argLine>-->
-                    <testSourceDirectory>src/it/java</testSourceDirectory>
-                    <testClassesDirectory>${project.build.directory}/it-classes</testClassesDirectory>
-                </configuration>
+<!--                    <testSourceDirectory>src/it/java</testSourceDirectory>
+                    <testClassesDirectory>${project.build.directory}/it-classes</testClassesDirectory>-->
+                <!--</configuration>-->
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -137,10 +144,10 @@
                         </goals>
                         <configuration>
                             <destFile>${project.build.directory}/coverage-reports/jacoco-it.exec</destFile>
-                            <propertyName>failsafeArgLine</propertyName>
+<!--                            <propertyName>failsafeArgLine</propertyName>
                             <includes>
                                 <include>**/it/*</include>
-                            </includes>
+                            </includes>-->
                         </configuration>
                     </execution>
                     <execution>
