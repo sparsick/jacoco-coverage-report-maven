@@ -98,8 +98,9 @@
                     <output>file</output>
                     <append>true</append>
                     <excludes>
-                        <exclude>**/config/*</exclude>
-                        <exclude>**/dialect/*</exclude>
+                        <exclude>**/exclude/*</exclude>
+<!--                        <exclude>**/config/*</exclude>
+                        <exclude>**/dialect/*</exclude>-->
                     </excludes>
                 </configuration>        
                 <executions>
@@ -111,10 +112,10 @@
                         </goals>
                         <configuration>
                             <destFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</destFile>
-                            <propertyName>surefireArgLine</propertyName>
-                            <includes>
+                            <!--<propertyName>surefireArgLine</propertyName>-->
+<!--                            <includes>
                                 <include>**/ut/*</include>
-                            </includes>
+                            </includes>-->
                         </configuration>
                     </execution>
                     <execution>
