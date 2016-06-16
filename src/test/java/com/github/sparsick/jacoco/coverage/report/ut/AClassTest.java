@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.github.sparsick.jacoco.coverage.report;
+package com.github.sparsick.jacoco.coverage.report.ut;
 
+import com.github.sparsick.jacoco.coverage.report.AClass;
 import org.junit.Test;
 
 /**
